@@ -25,7 +25,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one-light)
+
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -52,3 +53,19 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
+
+
+;;;;(setq xref-js2-search-program 'rg)
+(setq lsp-log-io 'true)
+
+
+;; If a language or plugin provides a custom xref backend available for it, use
+;; that instead. It will provide the best jump-to-definition and find-references
+;; experience. You can specify custom xref backends with:
+;;(set-lookup-handlers! 'js2-mode :xref-backend #'xref-js2-xref-backend)
+;; NOTE: xref doesn't provide a :documentation backend.
+
+;; Enabling only some features
+(setq dap-auto-configure-features '(sessions locals controls tooltip))
