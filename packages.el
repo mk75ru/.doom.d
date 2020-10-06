@@ -50,7 +50,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! dap-mode)
+;;(package! dap-mode)
 
 (package! rtags)
 

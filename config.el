@@ -56,9 +56,8 @@
 
 
 
-
 ;;;;(setq xref-js2-search-program 'rg)
-(setq lsp-log-io 'true)
+;; (setq lsp-log-io 'true)
 
 
 ;; If a language or plugin provides a custom xref backend available for it, use
@@ -68,4 +67,4 @@
 ;; NOTE: xref doesn't provide a :documentation backend.
 
 ;; Enabling only some features
-(setq dap-auto-configure-features '(sessions locals controls tooltip))
+;; (setq dap-auto-configure-features '(sessions locals controls tooltip))
