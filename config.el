@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Mikhail Krolikov"
+      user-mail-address "krolikov@incom.tomsk.ru")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -56,6 +56,7 @@
 
 
 
+;;--- lsp ---
 ;;;;(setq xref-js2-search-program 'rg)
 ;; (setq lsp-log-io 'true)
 
@@ -68,3 +69,10 @@
 
 ;; Enabling only some features
 ;; (setq dap-auto-configure-features '(sessions locals controls tooltip))
+
+
+;;--- rtags ---
+(after! rtags
+  (set-lookup-handlers! '(c-mode c++-mode) :async t
+    :definition #'rtags-find-symbol-at-point
+    :references #'rtags-find-references-at-point))

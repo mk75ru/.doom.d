@@ -1,3 +1,4 @@
+
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
@@ -52,9 +53,28 @@
 
 ;;(package! dap-mode)
 
-(package! rtags)
 
+(package! cmake-mode)
+
+(package! cuda-mode)
+
+(package! demangle-mode)
+
+(package! disaster)
+
+(package! modern-cpp-font-lock)
+
+(package! opencl-mode)
+
+(package! glsl-mode)
+
+(package! company-glsl)
+
+
+;;-lsp
 (package! irony)
+
+(package! irony-eldoc)
 
 (package! flycheck-irony)
 
@@ -62,4 +82,12 @@
 
 (package! company-irony-c-headers)
 
-(package! irony-eldoc)
+(package! rtags)
+
+(package! ivy-rtags)
+
+(package! helm-rtags)
+
+(package! go-translate)
+
+(package! posframe)
