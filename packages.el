@@ -91,3 +91,5 @@
 (package! go-translate)
 
 (package! posframe)
+
+(package! ccls)
