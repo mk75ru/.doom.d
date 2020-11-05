@@ -57,6 +57,11 @@
 
 
 ;;--- lsp ---
+(add-hook 'cpp-mode-local-vars-hook #'lsp!)
+(add-hook 'c-mode-local-vars-hook #'lsp!)
+(add-hook 'c++-mode-local-vars-hook #'lsp!)
+
+;;
 ;;;;(setq xref-js2-search-program 'rg)
 ;; (setq lsp-log-io 'true)
 
@@ -72,7 +77,7 @@
 
 
 ;;--- rtags ---
-(after! rtags
-  (set-lookup-handlers! '(c-mode c++-mode) :async t
-    :definition #'rtags-find-symbol-at-point
-    :references #'rtags-find-references-at-point))
+;;(after! rtags
+;;  (set-lookup-handlers! '(c-mode c++-mode) :async t
+;;    :definition #'rtags-find-symbol-at-point
+;;    :references #'rtags-find-references-at-point))

@@ -54,6 +54,20 @@
 ;;(package! dap-mode)
 
 
+;;------- lsp -----
+(package! lsp-mode)
+(package! lsp-ui)
+(package! lsp-ivy)
+(package! helm-lsp)
+;;(package! eglot)
+;;------------------
+
+
+
+
+
+
+
 (package! cmake-mode)
 
 (package! cuda-mode)
@@ -72,24 +86,25 @@
 
 
 ;;-lsp
-(package! irony)
+;;(package! irony)
 
-(package! irony-eldoc)
+;;(package! irony-eldoc)
 
-(package! flycheck-irony)
+;;(package! flycheck-irony)
 
-(package! company-irony)
+;;(package! company-irony)
 
-(package! company-irony-c-headers)
+;;(package! company-irony-c-headers)
 
-(package! rtags)
+;;(package! rtags)
 
-(package! ivy-rtags)
+;;(package! ivy-rtags)
 
-(package! helm-rtags)
+;;(package! helm-rtags)
 
 (package! go-translate)
 
 (package! posframe)
 
+;;+lsp
 (package! ccls)
