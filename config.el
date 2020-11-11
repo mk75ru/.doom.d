@@ -83,8 +83,28 @@
 ;;    :references #'rtags-find-references-at-point))
 
 
+
 ;;google-translate
 (setq google-translate-default-source-language "en" )
 (setq google-translate-default-target-language "ru" )
 ;;(setq google-translate-backend-method 'curl)
 (setq google-translate-show-phonetic t)
+
+;;keybinding
+(map! :leader
+      ;;; <leader> a --- all
+      (:prefix-map ("a" . "all")
+       :desc "Compile"                               "c"   #'compile
+       :desc "Recompile"                             "C"   #'recompile
+       :desc "Jump to definition"                    "d"   #'+lookup/definition
+       :desc "Jump to references"                    "D"   #'+lookup/references
+       :desc "Jump to documentation"                 "k"   #'+lookup/documentation
+       :desc "Find type definition"                  "t"   #'+lookup/type-definition
+       :desc "List errors"                           "x"   #'flymake-show-diagnostics-buffer
+       (:when (featurep! :checkers syntax)
+        :desc "List errors"                          "x"   #'flycheck-list-errors)
+       (:when (and (featurep! :tools lsp) (not (featurep! :tools lsp +eglot)))
+        :desc "LSP Rename"                           "r"   #'lsp-rename)
+       :desc "Snippet"                               "s"   #'yas-insert-snippet
+       )
+)
