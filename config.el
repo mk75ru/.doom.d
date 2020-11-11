@@ -81,3 +81,10 @@
 ;;  (set-lookup-handlers! '(c-mode c++-mode) :async t
 ;;    :definition #'rtags-find-symbol-at-point
 ;;    :references #'rtags-find-references-at-point))
+
+
+;;google-translate
+(setq google-translate-default-source-language "en" )
+(setq google-translate-default-target-language "ru" )
+;;(setq google-translate-backend-method 'curl)
+(setq google-translate-show-phonetic t)

@@ -108,3 +108,10 @@
 
 ;;+lsp
 (package! ccls)
+
+
+;;translate
+(package! google-translate)
+;;set
+;;     google-translate-default-target-language
+;;
