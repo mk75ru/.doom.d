@@ -85,37 +85,6 @@
 
 
 ;;google-translate
-;;
-
-
-;;(defun google-translate--search-tkk ()
-;;  "Get the Token-Key from the page buffer."
-;;  (let (downloaded)
-;;    (setq downloaded (shell-command-to-string "curl -s --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18' 'https://translate.google.com' | sed 's/,/\\n,/g' | grep ',tkk'"))
-;;    (print downloaded)
-;;    (with-temp-buffer (insert downloaded)
-;;		      (goto-char 0)
-;;		      (re-search-forward ",tkk:'\\([0-9]+\\)\\.\\([0-9]+\\)")
-;;		      (list (string-to-number (match-string 1))
-;;			    (string-to-number (match-string 2))))))
-
-;;  (setq google-translate-default-source-language "en" )
-;;  (setq google-translate-default-target-language "ru" )
-;;  (setq google-translate-backend-method 'curl)
-;;  (setq google-translate-show-phonetic t)
-
-
-
-;; from modules/completion/company/config.el
-;;(after! google-translate
-;;  (setq google-translate-default-source-language "en"
-;;        google-translate-default-target-language "ru"
-;;        google-translate-backend-method 'curl
-;;        google-translate-show-phonetic t)
-;;  (google-translate--search-tkk)
-;;)
-
-
 
 (use-package! google-translate
   :defer 3
