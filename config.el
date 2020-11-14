@@ -63,7 +63,7 @@
 
 ;;
 ;;;;(setq xref-js2-search-program 'rg)
-;; (setq lsp-log-io 'true)
+;; (setq lsp-lore-io 'true)
 
 
 ;; If a language or plugin provides a custom xref backend available for it, use
@@ -85,10 +85,59 @@
 
 
 ;;google-translate
-(setq google-translate-default-source-language "en" )
-(setq google-translate-default-target-language "ru" )
-;;(setq google-translate-backend-method 'curl)
-(setq google-translate-show-phonetic t)
+;;
+
+
+;;(defun google-translate--search-tkk ()
+;;  "Get the Token-Key from the page buffer."
+;;  (let (downloaded)
+;;    (setq downloaded (shell-command-to-string "curl -s --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18' 'https://translate.google.com' | sed 's/,/\\n,/g' | grep ',tkk'"))
+;;    (print downloaded)
+;;    (with-temp-buffer (insert downloaded)
+;;		      (goto-char 0)
+;;		      (re-search-forward ",tkk:'\\([0-9]+\\)\\.\\([0-9]+\\)")
+;;		      (list (string-to-number (match-string 1))
+;;			    (string-to-number (match-string 2))))))
+
+;;  (setq google-translate-default-source-language "en" )
+;;  (setq google-translate-default-target-language "ru" )
+;;  (setq google-translate-backend-method 'curl)
+;;  (setq google-translate-show-phonetic t)
+
+
+
+;; from modules/completion/company/config.el
+;;(after! google-translate
+;;  (setq google-translate-default-source-language "en"
+;;        google-translate-default-target-language "ru"
+;;        google-translate-backend-method 'curl
+;;        google-translate-show-phonetic t)
+;;  (google-translate--search-tkk)
+;;)
+
+
+
+(use-package! google-translate
+  :defer 3
+  :custom
+  (google-translate-base-url "https://translate.google.ru/translate_a/single")
+  (google-translate--tkk-url "https://translate.google.ru/")
+  (google-translate-listen-url "https://translate.google.ru/translate_tts")
+  (google-translate-backend-method 'curl)
+  (google-translate-pop-up-buffer-set-focus t)
+  (google-translate-default-source-language "en")
+  (google-translate-default-target-language "ru")
+  :config
+  (when (and (string-match "0.11.18"
+                           (google-translate-version))
+             (>= (time-to-seconds)
+                 (time-to-seconds
+                  (encode-time 0 0 0 23 9 2018))))
+    (defun google-translate--get-b-d1 ()
+      ;; TKK='427110.1469889687'
+      (list 427110 1469889687)))
+  )
+
 
 ;;keybinding
 (map! :leader
