@@ -106,5 +106,7 @@
        (:when (and (featurep! :tools lsp) (not (featurep! :tools lsp +eglot)))
         :desc "LSP Rename"                           "r"   #'lsp-rename)
        :desc "Snippet"                               "s"   #'yas-insert-snippet
+       :desc "Add root project"      "a"   #'projectile-add-known-project
+       :desc "Remove root project"   "u"   #'projectile-remove-current-project-from-known-projects
        )
 )
