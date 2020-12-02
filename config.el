@@ -63,7 +63,7 @@
 
 ;;
 ;;;;(setq xref-js2-search-program 'rg)
-;; (setq lsp-log-io 'true)
+;; (setq lsp-lore-io 'true)
 
 
 ;; If a language or plugin provides a custom xref backend available for it, use
@@ -85,10 +85,28 @@
 
 
 ;;google-translate
-(setq google-translate-default-source-language "en" )
-(setq google-translate-default-target-language "ru" )
-;;(setq google-translate-backend-method 'curl)
-(setq google-translate-show-phonetic t)
+
+(use-package! google-translate
+  :defer 3
+  :custom
+  (google-translate-base-url "https://translate.google.ru/translate_a/single")
+  (google-translate--tkk-url "https://translate.google.ru/")
+  (google-translate-listen-url "https://translate.google.ru/translate_tts")
+  (google-translate-backend-method 'curl)
+  (google-translate-pop-up-buffer-set-focus t)
+  (google-translate-default-source-language "en")
+  (google-translate-default-target-language "ru")
+  :config
+  (when (and (string-match "0.11.18"
+                           (google-translate-version))
+             (>= (time-to-seconds)
+                 (time-to-seconds
+                  (encode-time 0 0 0 23 9 2018))))
+    (defun google-translate--get-b-d1 ()
+      ;; TKK='427110.1469889687'
+      (list 427110 1469889687)))
+  )
+
 
 ;;keybinding
 (map! :leader
