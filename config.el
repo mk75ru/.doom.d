@@ -61,6 +61,13 @@
 (add-hook 'c-mode-local-vars-hook #'lsp!)
 (add-hook 'c++-mode-local-vars-hook #'lsp!)
 
+(after! ccls
+  (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
+  (setq ccls-args '(--log-file=/tmp/ccls.out -v=1) )
+  (set-lsp-priority! 'ccls 2)) ; optional as ccls is the default in Doom
+
+
+
 ;;
 ;;;;(setq xref-js2-search-program 'rg)
 ;; (setq lsp-lore-io 'true)
@@ -128,3 +135,10 @@
        :desc "Remove root project"   "u"   #'projectile-remove-current-project-from-known-projects
        )
 )
+
+
+(use-package! tree-sitter
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode)x
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))

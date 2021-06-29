@@ -109,9 +109,23 @@
 ;;+lsp
 (package! ccls)
 
+(after! lsp-mode
+  (set-lsp-priority! 'ccls 1))
 
 ;;translate
 (package! google-translate)
 ;;set
 ;;     google-translate-default-target-language
 ;;
+
+
+; Doxymacs is Doxy
+(package! doxymacs)
+
+
+;(package! modern-cpp-font-lock)
+
+
+
+(package! tree-sitter)
+(package! tree-sitter-langs)
