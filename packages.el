@@ -60,6 +60,15 @@
 (package! lsp-ivy)
 (package! helm-lsp)
 ;;(package! eglot)
+;;
+;;(setq lsp-clients-clangd-args '("-j=3"
+;;                                "--background-index"
+;;                                "--clang-tidy"
+;;                                "--completion-style=detailed"
+;;                                "--header-insertion=never"
+;;                                "--header-insertion-decorators=0"))
+;;(after! lsp-clangd (set-lsp-priority! 'clangd 2))
+
 ;;------------------
 
 
@@ -109,8 +118,12 @@
 ;;+lsp
 (package! ccls)
 
-(after! lsp-mode
-  (set-lsp-priority! 'ccls 1))
+;;(after! lsp-mode
+;;  (set-lsp-priority! 'ccls 1))
+;;
+(after! ccls
+  (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
+  (set-lsp-priority! 'ccls 2)) ; optional as ccls is the default in Doom
 
 ;;translate
 (package! google-translate)
@@ -120,12 +133,26 @@
 
 
 ; Doxymacs is Doxy
-(package! doxymacs)
+;(package! doxymacs)
+
+(package! tidy)
 
 
-;(package! modern-cpp-font-lock)
+(package! modern-cpp-font-lock)
 
 
 
 (package! tree-sitter)
 (package! tree-sitter-langs)
+
+(package! mustache-mode)
+
+(package! color-identifiers-mode)
+
+(after! color-identifiers-mode
+  (add-hook 'after-init-hook 'global-color-identifiers-mode)
+)
+
+
+;(package! arduino-mode)
+
