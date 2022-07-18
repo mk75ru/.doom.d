@@ -143,3 +143,39 @@
   (require 'tree-sitter-langs)
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
+
+
+;; original on https://gitlab.com/shilling.jake/emacsd/-/blob/dcc3c078a3f3df91b792721e639567e16b72a92f/config.org
+(use-package! origami
+  :diminish
+  :config
+  (defhydra hydra-origami (:color red)
+    ("o" origami-open-node "open" :column "Open")
+    ("O" origami-open-node-recursively "open recursively")
+    ("C-o" origami-open-all-nodes "open all")
+    ("c" origami-close-node "close" :column "Close")
+    ("C" origami-close-node-recursively "close recursively")
+    ("C-c" origami-close-all-nodes "close all")
+    ("s" origami-show-node "show" :column "Show")
+    ("S" origami-show-only-node "show only node")
+    ("t" origami-forward-toggle-node "forward toggle" :column "Toggle")
+    ("T" origami-recursively-toggle-node "toggle recursively")
+    ("C-t" origami-toggle-all-nodes "toggle all")
+    ("<left>" origami-undo "undo" :column "Undo/Redo")
+    ("<right>" origami-redo "redo"))
+  :bind (:map origami-mode-map
+              ("C-c C-f" . origami-forward-fold-same-level)
+              ("C-c C-b" . origami-backward-fold-same-level)
+              ("C-c C-n" . origami-forward-fold)
+              ("C-c C-p" . origami-previous-fold)
+              ("C-c C-f" . origami-toggle-node)
+              ("C-c C-o" . hydra-origami/body))
+  :hook ((c-mode . origami-mode)
+         (c++-mode . origami-mode)
+         (java-mode . origami-mode)
+         (clojure-mode . origami-mode)
+         (js2-mode . origami-mode)
+         (typescript-mode . origami-mode)
+         (python-mode . origami-mode)
+         (emacs-lisp-mode . origami-mode)))

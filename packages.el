@@ -154,5 +154,9 @@
 )
 
 
+(package! origami)
+(package! hydra)
+
+
 ;(package! arduino-mode)
 
