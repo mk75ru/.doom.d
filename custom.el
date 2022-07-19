@@ -12,7 +12,7 @@
  '(font-lock-builtin-face ((t (:foreground "magenta3"))))
  '(font-lock-comment-face ((t (:foreground "saddle brown"))))
  '(font-lock-constant-face ((t (:foreground "orange red"))))
- '(font-lock-function-name-face ((t (:foreground "royal blue"))))
+ '(font-lock-function-name-face ((t (:inherit bold :foreground "#4078f2"))))
  '(font-lock-type-face ((t (:foreground "magenta1"))))
  '(font-lock-variable-name-face ((t (:foreground "orange")))))
 (put 'customize-group 'disabled nil)
