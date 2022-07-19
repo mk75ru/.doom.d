@@ -179,3 +179,5 @@
          (typescript-mode . origami-mode)
          (python-mode . origami-mode)
          (emacs-lisp-mode . origami-mode)))
+
+(add-hook 'prog-mode-hook #'hs-minor-mode)
