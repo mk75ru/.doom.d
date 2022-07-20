@@ -180,4 +180,31 @@
          (python-mode . origami-mode)
          (emacs-lisp-mode . origami-mode)))
 
+
+;;(use-package! semantic-mode
+;;  :hook ((c-mode . semantic-mode)
+;;         (c++-mode . semantic-mode)
+;;         )
+;;)
+;;(add-load-path!  "~/.doom.d/emacs.d")
+;;(require 'doc-mode)
+;;;;(add-hook 'prog-mode-hook #'doc-mode)
+;;(add-hook 'c-mode-common-hook 'doc-mode)
+
+
 (add-hook 'prog-mode-hook #'hs-minor-mode)
+(setq hs-hide-all-non-comment-function #'ignore)
+
+
+(use-package! lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  ; to get lsp-mode going with xtensa
+  (setq lsp-clients-clangd-executable "clangd")
+  (setq lsp-clients-clangd-args '("--query-driver=/**/bin/xtensa-esp32-elf-*" "--background-index" "--header-insertion=iwyu" "-j=4" "--log=verbose" ))
+  :hook
+  (c-mode . lsp)
+  (lsp-mode . lsp-enable-which-key-integration))
+
+(use-package! lsp-ui
+  :commands lsp-ui-mode)
