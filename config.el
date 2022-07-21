@@ -181,19 +181,19 @@
          (emacs-lisp-mode . origami-mode)))
 
 
-;;(use-package! semantic-mode
-;;  :hook ((c-mode . semantic-mode)
-;;         (c++-mode . semantic-mode)
-;;         )
-;;)
-;;(add-load-path!  "~/.doom.d/emacs.d")
-;;(require 'doc-mode)
-;;;;(add-hook 'prog-mode-hook #'doc-mode)
-;;(add-hook 'c-mode-common-hook 'doc-mode)
+(use-package! semantic-mode
+  :hook ((c-mode . semantic-mode)
+         (c++-mode . semantic-mode)
+         )
+)
+(add-load-path!  "~/.doom.d/emacs.d")
+(require 'doc-mode)
+;;(add-hook 'prog-mode-hook #'doc-mode)
+(add-hook 'c-mode-common-hook 'doc-mode)
 
 
-(add-hook 'prog-mode-hook #'hs-minor-mode)
-(setq hs-hide-all-non-comment-function #'ignore)
+;;(add-hook 'prog-mode-hook #'hs-minor-mode)
+;;(setq hs-hide-all-non-comment-function #'ignore)
 
 
 (use-package! lsp-mode
