@@ -3,6 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(history-advised-before-functions
+   '(imenu isearch-mode beginning-of-buffer end-of-buffer +lookup/definition +lookup/references +lookup/implementations +lookup/type-definition))
+ '(history-mode t)
  '(package-selected-packages '(wgrep)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

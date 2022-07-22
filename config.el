@@ -181,17 +181,19 @@
          (emacs-lisp-mode . origami-mode)))
 
 
+
+;; doxygen комментарии
 (use-package! semantic-mode
   :hook ((c-mode . semantic-mode)
          (c++-mode . semantic-mode)
          )
-)
+  )
 (add-load-path!  "~/.doom.d/emacs.d")
 (require 'doc-mode)
 ;;(add-hook 'prog-mode-hook #'doc-mode)
 (add-hook 'c-mode-common-hook 'doc-mode)
 
-
+;; Обычные комментарии
 ;;(add-hook 'prog-mode-hook #'hs-minor-mode)
 ;;(setq hs-hide-all-non-comment-function #'ignore)
 
@@ -201,10 +203,28 @@
   :init
   ; to get lsp-mode going with xtensa
   (setq lsp-clients-clangd-executable "clangd")
-  (setq lsp-clients-clangd-args '("--query-driver=/**/bin/xtensa-esp32-elf-*" "--background-index" "--header-insertion=iwyu" "-j=4" "--log=verbose" ))
+  (setq lsp-clients-clangd-args '("--query-driver=/home/miha/.espressif/tools/xtensa-esp32-elf/**/xtensa-esp32-elf/bin/xtensa-esp32-elf-*" "--background-index" "--header-insertion=iwyu" "-j=4" "--log=verbose" ))
   :hook
   (c-mode . lsp)
+  (c++-mode . lsp)
   (lsp-mode . lsp-enable-which-key-integration))
 
 (use-package! lsp-ui
   :commands lsp-ui-mode)
+
+
+;;(use-package! history
+;;  :hook ((c-mode . history-mode)
+;;         (c++-mode . history-mode)
+;;         (java-mode . history-mode)
+;;         (clojure-mode . history-mode)
+;;         (js2-mode . history-mode)
+;;         (typescript-mode . history-mode)
+;;         (python-mode . history-mode)
+;;         (emacs-lisp-mode . history-mode)
+;;         )
+;;
+;;:bind (("C-c c <left>"   . history-prev-history)
+;;       ("C-c c <right>"  . history-next-history)
+;;       )
+;;

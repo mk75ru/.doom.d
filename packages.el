@@ -157,6 +157,6 @@
 (package! origami)
 (package! hydra)
 
+;;(package! history)
 
-;(package! arduino-mode)
-
+;;(package! arduino-mode)
