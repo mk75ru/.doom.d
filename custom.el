@@ -6,7 +6,7 @@
  '(blink-cursor-mode nil)
  '(column-number-mode t)
  '(menu-bar-mode nil)
- '(package-selected-packages '(wgrep))
+ '(package-selected-packages '(vcomplete wgrep))
  '(size-indication-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces

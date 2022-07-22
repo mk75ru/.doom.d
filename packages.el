@@ -153,6 +153,7 @@
   (add-hook 'after-init-hook 'global-color-identifiers-mode)
 )
 
+(package! pandoc)
 
 ;(package! arduino-mode)
 
