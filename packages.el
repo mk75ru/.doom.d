@@ -155,5 +155,9 @@
 
 (package! pandoc)
 
-;(package! arduino-mode)
+(package! origami)
+(package! hydra)
 
+;;(package! history)
+
+;;(package! arduino-mode)
