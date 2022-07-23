@@ -161,3 +161,5 @@
 ;;(package! history)
 
 ;;(package! arduino-mode)
+
+;;(package! exec-path-from-shell)
