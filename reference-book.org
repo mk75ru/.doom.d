@@ -1,7 +1,7 @@
 #+TITLE: Todo
 
 
-[[https://spec-zone.ru/][Справочник по всему программистскому]]
+ [[https://spec-zone.ru/][Справочник по всему программистскому]]
 
 * emacs
 **  [[http://dehun.space/articles/28_jun_2014-cppman+emacs.%20Offline%20c++%20STL%20and%20boost%20documentation.html][Настройка манов stl и boost для emacs]]
@@ -13,5 +13,6 @@
 ** [[http://ci-plus-plus-snachala.ru/][Хороший сайт по C++]]
 ** [[http://cpp-reference.ru/][Еще один хороший сайт по C++]]
 ** [[http://www.c-cpp.ru/][Исчо один сайт по C++]]
+** [[https://radioprog.ru/post/1420][SOLID-C++]]
 * Алгоритмы и структуры данных
 ** [[https://habr.com/ru/company/ruvds/blog/515258/][Алгоритмы и структуры данных]]
