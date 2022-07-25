@@ -20,7 +20,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Droid Sans Mono Slashed" :foundry "1ASC" :slant normal :weight normal :height 158 :width normal))))
+ '(default ((t (:family "Droid Sans Mono Slashed" :foundry "1ASC" :slant normal :weight normal :height 100 :width normal))))
  '(font-lock-builtin-face ((t (:foreground "magenta3"))))
  '(font-lock-comment-face ((t (:foreground "saddle brown"))))
  '(font-lock-constant-face ((t (:foreground "orange red"))))
