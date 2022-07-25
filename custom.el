@@ -16,14 +16,16 @@
 
 '(package-selected-packages '(wgrep))
 
-(add-load-path!  "doom-custom.d")
+ (setq custom-file "~/.doom.d/doom-custom.d/custom.el")
+ (load custom-file)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 
- '(setfont)
+ (macroexpand '(setfont))
  '(font-lock-builtin-face ((t (:foreground "magenta3"))))
  '(font-lock-comment-face ((t (:foreground "saddle brown"))))
  '(font-lock-constant-face ((t (:foreground "orange red"))))
