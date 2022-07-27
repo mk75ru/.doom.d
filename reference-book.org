@@ -18,3 +18,9 @@
 
 * Алгоритмы и структуры данных
 ** [[https://habr.com/ru/company/ruvds/blog/515258/][Алгоритмы и структуры данных]]
+* rfc
+** [[https://www.rfc-editor.org/retrieve/][rfc официальный сайт]]
+** [[https://ru.wikipedia.org/wiki/RFC][rfc на wiki]]
+** [[https://rfc2.ru/][rfc на русском]]
+** [[https://proverkassl.com/docs_rfc.html][rfc на русском]]
+** [[https://rfc.com.ru/][rfc на русском]]
