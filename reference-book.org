@@ -24,3 +24,5 @@
 ** [[https://rfc2.ru/][rfc на русском]]
 ** [[https://proverkassl.com/docs_rfc.html][rfc на русском]]
 ** [[https://rfc.com.ru/][rfc на русском]]
+* javascript-nodejs
+** [[https://www.twilio.com/blog/5-ways-to-make-http-requests-in-node-js-using-async-await][http-requests-in-node-js-using-async-await]]
