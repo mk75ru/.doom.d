@@ -232,3 +232,7 @@
 (find-file "~/.doom.d/reference-book.org")
 
 ;;(eww-open-file "/home/mk/.doom.d/html-book-en/reference/en/index.html")
+
+;; Запуск .bashrc при запуске emacs
+(setq shell-file-name "bash")
+(setq shell-command-switch "-ic")
