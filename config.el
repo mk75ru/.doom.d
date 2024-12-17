@@ -180,8 +180,6 @@
          (python-mode . origami-mode)
          (emacs-lisp-mode . origami-mode)))
 
-
-
 ;; doxygen комментарии
 (use-package! semantic-mode
   :hook ((c-mode . semantic-mode)
@@ -236,3 +234,8 @@
 ;; Запуск .bashrc при запуске emacs
 (setq shell-file-name "bash")
 (setq shell-command-switch "-ic")
+
+
+(after! projectile (setq projectile-project-root-files-bottom-up (remove ".git"
+          projectile-project-root-files-bottom-up)))
+

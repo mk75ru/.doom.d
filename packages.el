@@ -133,7 +133,8 @@
 
 
 ; Doxymacs is Doxy
-;(package! doxymacs)
+;;(package! doxymacs)
+(package! highlight-doxygen)
 
 (package! tidy)
 
@@ -155,7 +156,8 @@
 
 (package! pandoc)
 
-(package! origami)
+;;(package! origami)
+
 (package! hydra)
 
 ;;(package! history)
@@ -163,3 +165,15 @@
 ;;(package! arduino-mode)
 
 ;;(package! exec-path-from-shell)
+
+(package! dts-mode)
+
+(package! ejson-mode)
+
+(package! json-mode)
+
+(package! yafolding)
+
+(package! org-vcard)
+
+(package! vcard)
